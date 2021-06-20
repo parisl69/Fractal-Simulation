@@ -12,7 +12,6 @@ The following procedure repeats for a number of 100,000 iterations:
 ## Usage
 - Change the number of the container shape points (3-10) and observe changes in the fractal.
 - Click Randomize to view other variances of the simulation under the same parameters.
-- Change other parameters such as color, number of iterations etc in the file 
 
 ## Requirements
 This app uses JQuery 3.6 and Bootstrap 5.0.1.
