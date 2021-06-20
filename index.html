@@ -28,11 +28,17 @@
                     <input id="numberOfContainerPoints" type="number" min="3" max="10">               
                 </div>
                 <div id="form-divider"></div>
+                <div class="form-group d-inline-block">
+                    <label for="nextPointFraction">Next point fraction</label>
+                    <input id="nextPointFraction" type="number" min="2" max="5">               
+                </div>
+                <div id="form-divider"></div>
                 <button id="randomize" class="btn btn-sm btn-secondary ml-5">Randomize</button>
                 <hr>
                 <p><small>
-                    Change the number of container points (3-10) and observe changes in the fractal.<br>
-                    Click Randomize to view other variances of the simulation under the same parameters.
+                    Change the <b>number of container points</b> (3-10) and observe changes in the fractal.<br>
+                    <b>Next Point Fraction</b> (2-5): The fraction of the connecting line between the current point and the <br> selected container point, by which the current point will move (e.g. 2=midpoint, 3=1/3 of the line etc.)<br>
+                    Click <b>Randomize</b> to view other variances of the simulation under the same parameters.
                 </small></p>
         </div>
 

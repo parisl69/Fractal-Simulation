@@ -32,34 +32,39 @@ function drawPoint( point, big=false, label="", color="black") {
 /**
  * Clears the canvas and draws a fresh new simulation
  */
- function drawSimulation() {
+ function drawSimulation(randomize=false) {
 
     let context = canvas.getContext('2d');
     context.clearRect(0, 0, canvasWidth, canvasHeight);
 
+    // if randomization is required
+    if (randomize) {
     //  Define a random container
-    var container = [];
-    for (i=0; i<containerPoints; i++) {
-        container.push(
-            [ randomInt(0,canvasWidth), randomInt(0,canvasHeight) ]
-        );
+        container = [];
+        for (i=0; i<containerPoints; i++) {
+            container.push(
+                [ randomInt(0,canvasWidth), randomInt(0,canvasHeight) ]
+            );
+        }
+
+        // Calculate the first random point for our simulation
+        currentPoint = [
+            randomInt(0, canvasWidth),
+            randomInt(0, canvasHeight)
+        ];
+        // Save this for later
+        firstRandomPoint = currentPoint;
     }
 
-    // Calculate the first random point for our simulation
-    var currentPoint = [
-        randomInt(0, canvasWidth),
-        randomInt(0, canvasHeight)
-    ];    
-    // Save this for later
-    var firstRandomPoint = currentPoint;
+
     // Run the simulation for 10000 steps
     for (j=0; j<simulationSteps; j++) {
         const dice = randomInt(1,containerPoints);
         // random triangle selected
         const refPoint = container[Object.keys(container)[dice-1]];
         // Declare new current point coordinates
-        let newX= (currentPoint[0] + refPoint[0])/2;
-        let newY= (currentPoint[1] + refPoint[1])/2; 
+        let newX= (currentPoint[0] + refPoint[0])/nextPointFraction;
+        let newY= (currentPoint[1] + refPoint[1])/nextPointFraction; 
         currentPoint = [ parseInt(newX), parseInt(newY) ];
         drawPoint(currentPoint, smallPoint, "", pointColor);
     }

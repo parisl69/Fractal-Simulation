@@ -2,21 +2,18 @@ body {
     padding-top: 50px;
 }
 
-#canvas-container {
-    /* text-align: center; */
-}
 
 #footer-container {
     margin-top: 20px;
-    /* text-align: center; */
 }
 
 #form-divider {
-    width: 50px;
+    width: 20px;
     display: inline-block;
 }
 
-input#numberOfContainerPoints {
+input#numberOfContainerPoints,
+input#nextPointFraction {
     text-align: center;
     width: 4em;
 }
