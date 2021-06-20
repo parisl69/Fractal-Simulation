@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Points Fractal simulation</title>
+    <title>Small Fractal simulation</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
@@ -16,13 +16,6 @@
         <div class="row">
         </div>
         <h1 class="pb-3">Fractal simulation</h1>
-        <p>
-            A container shape is defined from <em>n</em> points.</em><br>
-            "Start" is created in a random position, now considered to be the current point.<br>
-            The following procedure repeats for a number of 100,000 iterations: <br>
-            1. A container point is rendomly selected<br>
-            2. Current point moves to the midpoint of the line connecting its position and the select container point.
-        </p>
 
         <div id="canvas-container">
             <canvas id="myCanvas" class="text-center"></canvas> 
@@ -36,6 +29,11 @@
                 </div>
                 <div id="form-divider"></div>
                 <button id="randomize" class="btn btn-sm btn-secondary ml-5">Randomize</button>
+                <hr>
+                <p><small>
+                    Change the number of container points (3-10) and observe changes in the fractal.<br>
+                    Click Randomize to view other variances of the simulation under the same parameters.
+                </small></p>
         </div>
 
         </div>   
