@@ -7,6 +7,8 @@ The following procedure repeats for a number of 100,000 iterations:
 1. A container shape point is randomly selected
 2. *P* moves to the midpoint of the line connecting its current position and the selected container point.
 
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+
 ## Usage
 - Change the number of the container shape points (3-10) and observe changes in the fractal.
 - Click Randomize to view other variances of the simulation under the same parameters.
