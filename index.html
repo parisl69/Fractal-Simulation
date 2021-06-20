@@ -16,11 +16,26 @@
         <div class="row">
         </div>
         <h1 class="pb-3">Fractal simulation</h1>
+        <p>
+            A container shape is defined from <em>n</em> points.</em><br>
+            "Start" is created in a random position, now considered to be the current point.<br>
+            The following procedure repeats for a number of 100,000 iterations: <br>
+            1. A container point is rendomly selected<br>
+            2. Current point moves to the midpoint of the line connecting its position and the select container point.
+        </p>
+
         <div id="canvas-container">
             <canvas id="myCanvas" class="text-center"></canvas> 
         </div>
+
+
         <div id="footer-container">
-            <button id="recalculate" class="btn btn-sm btn-secondary">Recalculate</button>
+                <div class="form-group d-inline-block">
+                    <label for="numberOfContainerPoints">Number of container points</label>
+                    <input id="numberOfContainerPoints" type="number" min="3" max="10">               
+                </div>
+                <div id="form-divider"></div>
+                <button id="randomize" class="btn btn-sm btn-secondary ml-5">Randomize</button>
         </div>
 
         </div>   

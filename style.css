@@ -11,6 +11,16 @@ body {
     /* text-align: center; */
 }
 
+#form-divider {
+    width: 50px;
+    display: inline-block;
+}
+
+input#numberOfContainerPoints {
+    text-align: center;
+    width: 4em;
+}
+
 #myCanvas {
     background-color: white;
     border:1px solid #000000;
