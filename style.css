@@ -1,0 +1,20 @@
+body {
+    padding-top: 50px;
+}
+
+#canvas-container {
+    /* text-align: center; */
+}
+
+#footer-container {
+    margin-top: 20px;
+    /* text-align: center; */
+}
+
+#myCanvas {
+    background-color: white;
+    border:1px solid #000000;
+    border-radius: 12px;
+    border-color: darkgray;
+    box-shadow: 5px 10px 10px #ddd;
+}
