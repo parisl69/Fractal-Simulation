@@ -1,8 +1,5 @@
-
 const bigPoint = true;
 const smallPoint = false;
-
-// Global Parameters - change to your liking
 const canvasWidth = 700;
 const canvasHeight = 700;
 const randomPointColor = "red"; // The first point created in a random position
@@ -15,7 +12,9 @@ var currentPoint;
 var firstRandomPoint;
 var containerPoints = 3; // Initial number of container points
 var nextPointFraction = 2; // Next point fraction
+
 var canvas = document.getElementById("myCanvas");
+
 canvas.setAttribute("width", canvasWidth);
 canvas.setAttribute("height", canvasHeight);
 
