@@ -7,7 +7,7 @@ The following procedure repeats for a number of 100,000 iterations:
 1. A container shape point is randomly selected
 2. *P* moves to a fraction of the line connecting its current position and the selected container point. This fraction is defined by Next Point Fraction.
 
-![Screen shot](https://github.com/parisl69/Fractal-Simulation/blob/master/screenshot/screenshot.jpg)
+![Screen shot](https://github.com/parisl69/Fractal-Simulation/blob/master/screenshot/screenshot_new.jpg)
 
 ## Usage
 - Change the number of the container shape points (3-10) and observe changes in the fractal.

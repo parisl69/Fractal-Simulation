@@ -1,4 +1,12 @@
+import * as Consts from "./consts.js";
+export * from "./consts.js";
 
+/**
+ * 
+ * @param min 
+ * @param max 
+ * @returns a random integer between min and max 
+ */
 function randomInt(min, max) {
     return Math.floor(Math.random() * max) + min;
 }
@@ -33,49 +41,50 @@ function drawPoint( point, big=false, label="", color="black") {
 /**
  * Clears the canvas and draws a fresh new simulation
  */
- function drawSimulation(randomize=false) {
-
-    let context = canvas.getContext('2d');
-    context.clearRect(0, 0, canvasWidth, canvasHeight);
+ export function drawSimulation( randomize=false, container, currentPoint, firstRandomPoint, containerPoints, nextPointFraction) {
+ 
+    let context = document.getElementById("myCanvas").getContext('2d');
+    context.clearRect(0, 0, Consts.canvasWidth, Consts.canvasHeight);
 
     // if randomization is required
     if (randomize) {
-    //  Define a random container
+        //  Define a random container
         container = [];
-        for (i=0; i<containerPoints; i++) {
+        for (var i=0; i<containerPoints; i++) {
             container.push(
-                [ randomInt(0,canvasWidth), randomInt(0,canvasHeight) ]
+                [ randomInt(0,Consts.canvasWidth), randomInt(0,Consts.canvasHeight) ]
             );
         }
-
-        // Calculate the first random point for our simulation
-        currentPoint = [
-            randomInt(0, canvasWidth),
-            randomInt(0, canvasHeight)
-        ];
-        // Save this for later
-        firstRandomPoint = currentPoint;
     }
 
+    // Calculate the first random point for our simulation
+    currentPoint = [
+        randomInt(0, Consts.canvasWidth),
+        randomInt(0, Consts.canvasHeight)
+    ];
 
-    // Run the simulation for 10000 steps
-    for (j=0; j<simulationSteps; j++) {
-        const dice = randomInt(1,containerPoints);
-        // random triangle selected
-        const refPoint = container[Object.keys(container)[dice-1]];
+    // Save this for later
+    firstRandomPoint = currentPoint;
+
+    // Run the simulation for a predefined number of steps
+    for (var j=0; j<Consts.simulationSteps; j++) {
+        let dice = randomInt(1,containerPoints);
+        // select random container point 
+        let refPoint = container[ Object.keys(container)[dice-1] ];
         // Declare new current point coordinates
         let newX= (currentPoint[0] + refPoint[0])/nextPointFraction;
         let newY= (currentPoint[1] + refPoint[1])/nextPointFraction; 
         currentPoint = [ parseInt(newX), parseInt(newY) ];
-        drawPoint(currentPoint, smallPoint, "", pointColor);
+        drawPoint(currentPoint, Consts.smallPoint, "", Consts.pointColor);
     }
     // Draw the container points
     var counter=1;
     container.forEach(element => {
-        drawPoint(element, bigPoint, counter++, containterPointColor);
+        drawPoint(element, Consts.bigPoint, counter++, Consts.containterPointColor);
     });
 
-    // Draw thw first point in random position
-    drawPoint(firstRandomPoint, bigPoint, "Start", randomPointColor);
+    // Draw the first point in random position
+    drawPoint(firstRandomPoint, Consts.bigPoint, "Start", Consts.randomPointColor);
 
+    return container;
 }
