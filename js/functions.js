@@ -42,17 +42,17 @@ function drawPoint( point, big=false, label="", color="black") {
 /**
  * Clears the canvas and draws the simulation
  */
- export function drawSimulation( randomize, simulation)  {
+ export function drawSimulation(simulation)  {
  
-    let container=simulation.container;
-    let containerPoints=simulation.containerPoints;
-    let nextPointFraction=simulation.nextPointFraction;
+    let container = simulation.container;
+    let containerPoints = simulation.containerPoints;
+    let nextPointFraction = simulation.nextPointFraction;
 
-    let context = document.getElementById("myCanvas").getContext('2d');
+    let context = simulation.canvas.getContext('2d');
     context.clearRect(0, 0, Consts.canvasWidth, Consts.canvasHeight);
 
     // if randomization is required
-    if (randomize) {
+    if (simulation.randomize) {
         //  Define a random container
         container = [];
         for (var i=0; i<containerPoints; i++) {

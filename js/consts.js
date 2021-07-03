@@ -1,5 +1,3 @@
-export const RANDOMIZE_SIMULATION = true;
-export const DO_NOT_RANDOMIZE_SIMULATION = false;
 export const bigPoint = true;
 export const smallPoint = false;
 export const randomPointColor = "red"; // The first point created in a random position

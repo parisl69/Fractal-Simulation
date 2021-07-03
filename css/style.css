@@ -2,6 +2,27 @@ body {
     padding-top: 50px;
 }
 
+/* #canvas-container {
+} */
+
+#side-bar {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px;
+}
+
+#side-bar button {
+    width: 50px;
+}
+
+#myCanvas {
+    display: inline-block;
+    background-color: white;
+    border:1px solid #000000;
+    border-radius: 12px;
+    border-color: darkgray;
+    box-shadow: 5px 10px 10px #ddd;
+}
 
 #footer-container {
     margin-top: 20px;
@@ -18,10 +39,3 @@ input#nextPointFraction {
     width: 4em;
 }
 
-#myCanvas {
-    background-color: white;
-    border:1px solid #000000;
-    border-radius: 12px;
-    border-color: darkgray;
-    box-shadow: 5px 10px 10px #ddd;
-}
