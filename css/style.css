@@ -24,6 +24,10 @@ body {
     box-shadow: 5px 10px 10px #ddd;
 }
 
+.zoom-button {
+    text-align: center;
+}
+
 #footer-container {
     margin-top: 20px;
 }

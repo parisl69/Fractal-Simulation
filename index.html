@@ -25,9 +25,13 @@
 
             <div id="canvas-container" class="d-inline-flex text-center">
                 <div id="side-bar">
-                    <button class="btn btn-sm btn-secondary text-center w-100 rounded-1 mb-2">+</button>
-                    <br>
-                    <button class="btn btn-sm btn-secondary text-center w-100 rounded-1">-</button>
+                    <h4>Zoom</h5>
+                    <div id="zoom-level" class="mb-1"></div>
+                    <div class="btn-group-vertical">
+                        <button class="btn btn-sm btn-secondary rounded-1 mb-1 zoom-button zoom-in">+</button>
+                        <button class="btn btn-sm btn-secondary rounded-1 mb-1 zoom-button zoom-out">-</button>
+                        <button class="btn btn-sm btn-secondary rounded-1 zoom-button zoom-reset">X</button>
+                    </div>              
                 </div>
                 <canvas id="myCanvas"></canvas>
             </div>
