@@ -7,12 +7,13 @@ The following procedure repeats for a number of 100,000 iterations:
 1. A container shape point is randomly selected
 2. *P* moves to a fraction of the line connecting its current position and the selected container point. This fraction is defined by Next Point Fraction.
 
-![Screen shot](https://github.com/parisl69/Fractal-Simulation/blob/master/screenshot/screenshot_new.jpg)
+![Screen shot](https://github.com/parisl69/Fractal-Simulation/blob/master/screenshot/screenshot_new1.jpg)
 
 ## Usage
 - Change the number of the container shape points (3-10) and observe changes in the fractal.
 - Change the next point fraction
 - Click Randomize to view other variances of the simulation under the same parameters.
+- Zoom and pan the displayed fractal
 
 ## Requirements
 This app uses JQuery 3.6 and Bootstrap 5.0.1.

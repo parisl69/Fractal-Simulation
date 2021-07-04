@@ -26,6 +26,7 @@ $( document ).ready(function() {
 
     $("#randomize").click(function(){
         simulation.zoom=1;
+        displayZoom();
         simulation.offset = [0,0];
         simulation.randomize = true;
         simulation = Func.drawSimulation(simulation);
