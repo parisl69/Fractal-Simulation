@@ -17,11 +17,10 @@ function randomInt(min, max) {
  * label: "": nothing, "text": label
  * color: fillcolor for point and label
  */
-function drawPoint( point, zoom=1, big=false, label="", color="black") {
-    var x = point[0]*zoom;
-    var y = point[1]*zoom;
+function drawPoint( point, offset, zoom=1, big=false, label="", color="black") {
+    var x = (offset[0]+point[0])*zoom;
+    var y = (offset[1]+point[1])*zoom;
     var ctx = document.getElementById("myCanvas").getContext("2d");
-    //ctx.scale(1,1);
     ctx.beginPath();
     ctx.fillStyle = color;
     if (!big) {
@@ -74,18 +73,18 @@ function drawPoint( point, zoom=1, big=false, label="", color="black") {
         let newX = ((currentPoint[0] + refPoint[0]))/simulation.nextPointFraction;
         let newY = ((currentPoint[1] + refPoint[1]))/simulation.nextPointFraction; 
         currentPoint = [ newX, newY ];
-        drawPoint(currentPoint, simulation.zoom, Consts.smallPoint, "", Consts.pointColor);
+        drawPoint(currentPoint, simulation.offset, simulation.zoom, Consts.smallPoint, "", Consts.pointColor);
     }
 
     // Draw the container points 1,2,3,...
     var counter=1;
     simulation.container.forEach(element => {
-        drawPoint(element, simulation.zoom, Consts.bigPoint, counter++, Consts.containterPointColor);
+        drawPoint(element, simulation.offset, simulation.zoom, Consts.bigPoint, counter++, Consts.containterPointColor);
     });
 
     // Draw the first point "Start"
     let tempPoint = simulation.startPoint;
-    drawPoint(simulation.startPoint, simulation.zoom, Consts.bigPoint, "Start", Consts.randomPointColor);
+    drawPoint(simulation.startPoint, simulation.offset, simulation.zoom, Consts.bigPoint, "Start", Consts.randomPointColor);
 
     return simulation;
 };
